@@ -15,6 +15,7 @@ Welcome to my 100-day DevOps challenge logbook. This repository serves as a cent
 | :---: | :---: | :--- | :--- | :--- |
 | **001** | 2026-06-16 | Linux Admin & Security | Provisioning System Service Accounts with Non-Interactive Shell Topologies | [Link to Day 1 Folder](./Day-001) |
 | **002** | 2026-06-17 | Linux Admin & Security | Managing Ephemeral User Lifecycles with Account Expiration Constraints | [Link to Day 2 Folder](./Day-002) |
+| **003** | 2026-06-18 | Linux Admin & Security | SSH Daemon Hardening & Restricting Direct Root Ingress Controls | [Link to Day 3 Folder](./Day-003) |
 
 ---
 
@@ -37,3 +38,13 @@ Welcome to my 100-day DevOps challenge logbook. This repository serves as a cent
 * **Challenges faced:** Validating that account termination policies successfully registered within the underlying system shadow configuration files.
 * **How I solved it:** Utilized the low-level system aging audit tool `chage -l` to parse and verify active system policies directly.
 * **Code/Scripts used:** Look inside the `Day-002` folder.
+
+
+### Day 3: SSH Daemon Hardening & Multi-Node Perimeter Security
+* **What I built/learned:**
+    * Implemented infrastructure-wide transport layer compliance by auditing the OpenSSH daemon configuration file (`/etc/ssh/sshd_config`) across a distributed server cluster (`stapp01`, `stapp02`, `stapp03`).
+    * Leveraged stream editing automation tools (`sed`) to programmatically inject system security boundaries, modifying configuration keys inline without breaking structural layout defaults.
+    * Hardened data center threat vectors by setting `PermitRootLogin no` and recycling the `sshd` sub-system daemon process across all computing nodes.
+* **Challenges faced:** Manually targeting multiple distinct bare-metal/virtual systems could introduce baseline drift.
+* **How I solved it:** Normalized the mitigation logic into a standardized, reusable command pipeline, executing identical configuration modifications and service restarts on all targets systematically.
+* **Code/Scripts used:** Look inside the `Day-003` folder.
