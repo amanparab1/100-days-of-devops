@@ -13,9 +13,10 @@ Welcome to my 100-day DevOps challenge logbook. This repository serves as a cent
 
 | Day | Date | Focus Area | Core Concept / Task | Documentation / Code |
 | :---: | :---: | :--- | :--- | :--- |
-| **001** | 2026-06-16 | Linux Admin & Security | Provisioning System Service Accounts with Non-Interactive Shell Topologies | [Link to Day 1 Folder](./Day-001) |
+| **001** | 2026-06-16 | Linux Admin & Security | Provisioning System Service Accounts with Non-Interactive Shell Topologies | [Link to Day 1 Folder](./Day001) |
 | **002** | 2026-06-17 | Linux Admin & Security | Managing Ephemeral User Lifecycles with Account Expiration Constraints | [Link to Day 2 Folder](./Day-002) |
 | **003** | 2026-06-18 | Linux Admin & Security | SSH Daemon Hardening & Restricting Direct Root Ingress Controls | [Link to Day 3 Folder](./Day-003) |
+| **Day 004** | 2026-06-23 | File Permissions | Linux Admin | Fixed script executable rights by configuring global read/execute permissions (`a+rx`) for a backup utility. | [Code](./Day-004/) |
 
 ---
 
@@ -48,3 +49,12 @@ Welcome to my 100-day DevOps challenge logbook. This repository serves as a cent
 * **Challenges faced:** Manually targeting multiple distinct bare-metal/virtual systems could introduce baseline drift.
 * **How I solved it:** Normalized the mitigation logic into a standardized, reusable command pipeline, executing identical configuration modifications and service restarts on all targets systematically.
 * **Code/Scripts used:** Look inside the `Day-003` folder.
+
+
+### Day 4: Linux File System Permissions & Script Execution Hardening
+* **What I Did:** Resolved an issue on xFusionCorp Industries' App Server 1 where a distributed backup script (`/tmp/xfusioncorp.sh`) lacked the necessary execution bits for deployment automation.
+* **Key Concepts:** Linux Permission Tiers (User, Group, Others), Symbolic notation formatting, Shell execution mechanics.
+* **Technical Details:**
+    * Target Path: `/tmp/xfusioncorp.sh`
+    * Action Taken: Utilized symbolic assignment `chmod a+rx` to modify the permission flags uniformly.
+    * Key Takeaway: Learned that for interpreted languages (like Bash/Python), a file needs both the **execute (`x`)** bit *and* the **read (`r`)** bit enabled for non-root users. If only execute is set, the kernel can run the binary wrapper but the shell interpreter will throw a "Permission denied" error when trying to read the code blocks inside.
