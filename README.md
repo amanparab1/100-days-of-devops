@@ -16,7 +16,7 @@ Welcome to my 100-day DevOps challenge logbook. This repository serves as a cent
 | **001** | 2026-06-16 | Linux Admin & Security | Provisioning System Service Accounts with Non-Interactive Shell Topologies | [Link to Day 1 Folder](./Day001) |
 | **002** | 2026-06-17 | Linux Admin & Security | Managing Ephemeral User Lifecycles with Account Expiration Constraints | [Link to Day 2 Folder](./Day-002) |
 | **003** | 2026-06-18 | Linux Admin & Security | SSH Daemon Hardening & Restricting Direct Root Ingress Controls | [Link to Day 3 Folder](./Day-003) |
-| **Day 004** | 2026-06-23 | File Permissions | Linux Admin | Fixed script executable rights by configuring global read/execute permissions (`a+rx`) for a backup utility. | [Code](./Day-004/) |
+| **Day 004** | 2026-06-23 | File Permissions Linux Admin | Fixed script executable rights by configuring global read/execute permissions (`a+rx`) for a backup utility. | [Code](./Day-004/) |
 
 ---
 
