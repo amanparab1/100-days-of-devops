@@ -17,6 +17,8 @@ Welcome to my 100-day DevOps challenge logbook. This repository serves as a cent
 | **002** | 2026-06-17 | Linux Admin & Security | Managing Ephemeral User Lifecycles with Account Expiration Constraints | [Link to Day 2 Folder](./Day-002) |
 | **003** | 2026-06-18 | Linux Admin & Security | SSH Daemon Hardening & Restricting Direct Root Ingress Controls | [Link to Day 3 Folder](./Day-003) |
 | **Day 004** | 2026-06-23 | File Permissions Linux Admin | Fixed script executable rights by configuring global read/execute permissions (`a+rx`) for a backup utility. | [Code](./Day-004/) |
+| **Day 005** | 2026-06-24 | Kernel Security | Linux Admin | Installed SELinux dependencies and automated post-reboot state disabling via configuration stream updates. | [Code](./Day-005/) |
+
 
 ---
 
@@ -58,3 +60,12 @@ Welcome to my 100-day DevOps challenge logbook. This repository serves as a cent
     * Target Path: `/tmp/xfusioncorp.sh`
     * Action Taken: Utilized symbolic assignment `chmod a+rx` to modify the permission flags uniformly.
     * Key Takeaway: Learned that for interpreted languages (like Bash/Python), a file needs both the **execute (`x`)** bit *and* the **read (`r`)** bit enabled for non-root users. If only execute is set, the kernel can run the binary wrapper but the shell interpreter will throw a "Permission denied" error when trying to read the code blocks inside.
+ 
+
+### Day 5 (Part 2): Kernel Security Baselines & SELinux Lifecycle Management
+* **What I Did:** Completed an urgent security compliance requirement on App Server 1. Installed core SELinux subsystems and staged a configuration structure to fully disable kernel enforcement hooks upon the system's scheduled nightly maintenance reboot.
+* **Key Concepts:** Kernel security states (Enforcing, Permissive, Disabled), Package pipeline deployment, Configuration state persistence.
+* **Technical Details:**
+    * Targeted Configurations: `/etc/selinux/config`
+    * Logic Constraints: Avoided short-term runtime modifications via `setenforce` to prevent processing collisions before the maintenance window. Instead, used `sed` replacement logic (`^SELINUX=.*/) to intercept the parameters at rest.
+    * Takeaway: Understood that updating configuration variables at rest ensures system reliability during automated bare-metal configuration cycles.
