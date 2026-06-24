@@ -17,7 +17,7 @@ Welcome to my 100-day DevOps challenge logbook. This repository serves as a cent
 | **002** | 2026-06-17 | Linux Admin & Security | Managing Ephemeral User Lifecycles with Account Expiration Constraints | [Link to Day 2 Folder](./Day-002) |
 | **003** | 2026-06-18 | Linux Admin & Security | SSH Daemon Hardening & Restricting Direct Root Ingress Controls | [Link to Day 3 Folder](./Day-003) |
 | **Day 004** | 2026-06-23 | File Permissions Linux Admin | Fixed script executable rights by configuring global read/execute permissions (`a+rx`) for a backup utility. | [Code](./Day-004/) |
-| **Day 005** | 2026-06-24 | Kernel Security | Linux Admin | Installed SELinux dependencies and automated post-reboot state disabling via configuration stream updates. | [Code](./Day-005/) |
+| **Day 005** | 2026-06-24 | Kernel Security Linux Admin | Installed SELinux dependencies and automated post-reboot state disabling via configuration stream updates. | [Code](./Day-005/) |
 
 
 ---
