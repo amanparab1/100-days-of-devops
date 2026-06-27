@@ -18,6 +18,7 @@ Welcome to my 100-day DevOps challenge logbook. This repository serves as a cent
 | **003** | 2026-06-18 | Linux Admin & Security | SSH Daemon Hardening & Restricting Direct Root Ingress Controls | [Link to Day 3 Folder](./Day-003) |
 | **004** | 2026-06-23 | File Permissions | Fixed script executable rights by configuring global read/execute permissions (`a+rx`) for a backup utility. | [Code](./Day-004/) |
 | **005** | 2026-06-24 | Kernel Security | Installed SELinux dependencies and automated post-reboot state disabling via configuration stream updates. | [Code](./Day-005/) |
+| **006** | 2026-06-27 | Task Automation | Linux Admin | Provisioned `cronie` tracking daemons and automated recurrent scheduled script pipelines across multi-node clusters. | [Code](./Day-006/) |
 
 ---
 
@@ -68,3 +69,12 @@ Welcome to my 100-day DevOps challenge logbook. This repository serves as a cent
     * Targeted Configurations: `/etc/selinux/config`
     * Logic Constraints: Avoided short-term runtime modifications via `setenforce` to prevent processing collisions before the maintenance window. Instead, used `sed` replacement logic (`^SELINUX=.*/) to intercept the parameters at rest.
     * Takeaway: Understood that updating configuration variables at rest ensures system reliability during automated bare-metal configuration cycles.
+ 
+
+### Day 6: Cron Orchestration & Scheduled Automation Execution
+* **What I Did:** Deployed and verified a cluster-wide automated job runner blueprint across all Nautilus application servers (`stapp01`, `stapp02`, `stapp03`). Instantiated daemon runtime lifecycles and injected an automated background validation task.
+* **Key Concepts:** Crontab Syntaxes, Spool Scheduling, Non-interactive Stream Piping, Init system initialization (`systemctl`).
+* **Technical Details:**
+    * Subsystem Engine: Installed `cronie` (the standard scheduling tool block for RHEL environments).
+    * Job Schedule Expression: `*/5 * * * *` (Evaluates dynamically to fire every 5th minute across hours, days, and months).
+    * Stream Automation Vector: Avoided interactive editors (`crontab -e`) inside the setup script by streaming the configuration profile directly to the standard input processor via `echo "..." \| crontab -`.
