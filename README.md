@@ -19,6 +19,7 @@ Welcome to my 100-day DevOps challenge logbook. This repository serves as a cent
 | **004** | 2026-06-23 | File Permissions | Fixed script executable rights by configuring global read/execute permissions (`a+rx`) for a backup utility. | [Code](./Day-004/) |
 | **005** | 2026-06-24 | Kernel Security | Installed SELinux dependencies and automated post-reboot state disabling via configuration stream updates. | [Code](./Day-005/) |
 | **006** | 2026-06-27 | Task Automation | Linux Admin | Provisioned `cronie` tracking daemons and automated recurrent scheduled script pipelines across multi-node clusters. | [Code](./Day-006/) |
+| **007** | 2026-06-28 | Systems Security | SSH Key Management | Provisioned 4096-bit RSA asymmetric key pairings and configured password-less cluster authentication pathways. | [Code](./Day-007/) |
 
 ---
 
@@ -78,3 +79,12 @@ Welcome to my 100-day DevOps challenge logbook. This repository serves as a cent
     * Subsystem Engine: Installed `cronie` (the standard scheduling tool block for RHEL environments).
     * Job Schedule Expression: `*/5 * * * *` (Evaluates dynamically to fire every 5th minute across hours, days, and months).
     * Stream Automation Vector: Avoided interactive editors (`crontab -e`) inside the setup script by streaming the configuration profile directly to the standard input processor via `echo "..." \| crontab -`.
+ 
+
+### Day 7: Asymmetric Cryptography & Cross-Node Trust Relations
+* **What I Did:** Generated a dedicated high-entropy RSA cryptographic key pair on the centralized cluster orchestration node (Jump Host) and bootstrapped secure, password-less authentication bindings to all remote application targets (`stapp01`, `stapp02`, `stapp03`).
+* **Key Concepts:** Public Key Cryptography, Asymmetric Trust Boundaries, Identity Verification, Key Distribution Security.
+* **Technical Details:**
+    * Encryption Vector: 4096-bit RSA key lengths to guarantee high computational security over the internal network segment.
+    * Mechanism of Action: Appended the Jump Host's public identity signature (`id_rsa.pub`) into the remote targets' native `~/.ssh/authorized_keys` file via the automated `ssh-copy-id` utility pipeline.
+    * Automation Significance: Establishing non-interactive SSH transport pipelines removes manual friction points, serving as the required layer for multi-node configuration tools.
