@@ -13,14 +13,13 @@ Welcome to my 100-day DevOps challenge logbook. This repository serves as a cent
 
 | Day | Date | Focus Area | Core Concept / Task | Documentation / Code |
 | :---: | :---: | :--- | :--- | :--- |
-| **001** | 2026-06-16 | Linux Admin & Security | Provisioning System Service Accounts with Non-Interactive Shell Topologies | [Link to Day 1 Folder](./Day-001) |
-| **002** | 2026-06-17 | Linux Admin & Security | Managing Ephemeral User Lifecycles with Account Expiration Constraints | [Link to Day 2 Folder](./Day-002) |
-| **003** | 2026-06-18 | Linux Admin & Security | SSH Daemon Hardening & Restricting Direct Root Ingress Controls | [Link to Day 3 Folder](./Day-003) |
-| **004** | 2026-06-23 | File Permissions | Fixed script executable rights by configuring global read/execute permissions (`a+rx`) for a backup utility. | [Code](./Day-004/) |
-| **005** | 2026-06-24 | Kernel Security | Installed SELinux dependencies and automated post-reboot state disabling via configuration stream updates. | [Code](./Day-005/) |
-| **006** | 2026-06-27 | Task Automation | Linux Admin | Provisioned `cronie` tracking daemons and automated recurrent scheduled script pipelines across multi-node clusters. | [Code](./Day-006/) |
-| **007** | 2026-06-28 | Systems Security | SSH Key Management | Provisioned 4096-bit RSA asymmetric key pairings and configured password-less cluster authentication pathways. | [Code](./Day-007/) |
-
+| **001** | 2026-06-16 | Linux Admin & Security | Provisioning System Service Accounts with Non-Interactive Shells | [Code](./Day-001/) |
+| **002** | 2026-06-17 | Linux Admin & Security | Managing Ephemeral User Lifecycles with Account Expiration Ceilings | [Code](./Day-002/) |
+| **003** | 2026-06-18 | Linux Admin & Security | SSH Daemon Hardening & Restricting Direct Root Ingress Controls | [Code](./Day-003/) |
+| **004** | 2026-06-23 | Linux File Permissions | Granting Multi-User Read & Execute Automation Rights (`a+rx`) | [Code](./Day-004/) |
+| **005** | 2026-06-24 | Linux Kernel Security | Staging Post-Reboot SELinux Disabling via Config Stream Updates | [Code](./Day-005/) |
+| **006** | 2026-06-27 | Linux Task Automation | Provisioning `cronie` Daemons & Scheduling Multi-Node Spool Jobs | [Code](./Day-006/) |
+| **007** | 2026-06-28 | Systems Security | Bootstrapping 4096-bit RSA Asymmetric Password-less Cluster Auth | [Code](./Day-007/) |
 ---
 
 ## 📝 Detailed Logbook
