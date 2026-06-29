@@ -20,6 +20,7 @@ Welcome to my 100-day DevOps challenge logbook. This repository serves as a cent
 | **005** | 2026-06-24 | Linux Kernel Security | Staging Post-Reboot SELinux Disabling via Config Stream Updates | [Code](./Day-005/) |
 | **006** | 2026-06-27 | Linux Task Automation | Provisioning `cronie` Daemons & Scheduling Multi-Node Spool Jobs | [Code](./Day-006/) |
 | **007** | 2026-06-28 | Systems Security | Bootstrapping 4096-bit RSA Asymmetric Password-less Cluster Auth | [Code](./Day-007/) |
+| **008** | 2026-06-29 | Config Management | Ansible Controller Setup | Deployed global Ansible `4.8.0` orchestration binaries via `pip3` across multi-user execution bounds. | [Code](./Day-008/) |
 ---
 
 ## 📝 Detailed Logbook
@@ -87,3 +88,12 @@ Welcome to my 100-day DevOps challenge logbook. This repository serves as a cent
     * Encryption Vector: 4096-bit RSA key lengths to guarantee high computational security over the internal network segment.
     * Mechanism of Action: Appended the Jump Host's public identity signature (`id_rsa.pub`) into the remote targets' native `~/.ssh/authorized_keys` file via the automated `ssh-copy-id` utility pipeline.
     * Automation Significance: Establishing non-interactive SSH transport pipelines removes manual friction points, serving as the required layer for multi-node configuration tools.
+
+
+
+### Day 8: Configuration Management Bootstrapping & Controller Provisioning
+* **What I Did:** Transitioned cluster orchestration from imperative shell scripts to declarative configuration management. Bootstrapped the Jump Host as a centralized Ansible Controller by deploying Ansible `4.8.0` globally across system environments.
+* **Key Concepts:** Imperative vs. Declarative Infrastructure, Global vs. Virtualenv Package Bounds, Binary $PATH Mapping, Package Dependency Trees.
+* **Technical Details:**
+    * Deployment Vector: `sudo pip3 install ansible==4.8.0`. Executing via root privileges bypassed user-local staging (`~/.local/bin`) and pushed the binaries into `/usr/local/bin`, ensuring multi-user accessibility across the operating system.
+    * Dependency Quirks: Learned to differentiate between `ansible-core` (the bare execution engine showing v2.11.12) and the curated `ansible` community package bundle (v4.8.0).
