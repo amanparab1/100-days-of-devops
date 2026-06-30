@@ -21,6 +21,7 @@ Welcome to my 100-day DevOps challenge logbook. This repository serves as a cent
 | **006** | 2026-06-27 | Linux Task Automation | Provisioning `cronie` Daemons & Scheduling Multi-Node Spool Jobs | [Code](./Day-006/) |
 | **007** | 2026-06-28 | Systems Security | Bootstrapping 4096-bit RSA Asymmetric Password-less Cluster Auth | [Code](./Day-007/) |
 | **008** | 2026-06-29 | Config Management | Ansible Controller Setup | Deployed global Ansible `4.8.0` orchestration binaries via `pip3` across multi-user execution bounds. | [Code](./Day-008/) |
+| **009** | 2026-06-30 | Database Reliability | Diagnosing MariaDB Failures & Repairing Directory Permission Drifts | [Code](./Day-009/) |
 ---
 
 ## 📝 Detailed Logbook
@@ -97,3 +98,12 @@ Welcome to my 100-day DevOps challenge logbook. This repository serves as a cent
 * **Technical Details:**
     * Deployment Vector: `sudo pip3 install ansible==4.8.0`. Executing via root privileges bypassed user-local staging (`~/.local/bin`) and pushed the binaries into `/usr/local/bin`, ensuring multi-user accessibility across the operating system.
     * Dependency Quirks: Learned to differentiate between `ansible-core` (the bare execution engine showing v2.11.12) and the curated `ansible` community package bundle (v4.8.0).
+
+
+
+### Day 9: Database Reliability Engineering & Incident Response
+* **What I Did:** Acted as a first responder for a critical production outage in the Stratos Datacenter where the internal Nautilus application lost database connectivity. Diagnosed the root cause by analyzing `systemd` journal logs and restored the MariaDB service.
+* **Key Concepts:** Daemon Lifecycle Management, Systemd Journal Auditing (`journalctl`), Database Data Directories, Linux File Ownership.
+* **Technical Details:**
+    * The service initialization was failing silently due to ownership drift on background directories. When the OS provisions services, the daemon user (e.g., `mysql`) must have explicit write access to both its PID tracking directory (`/run/mariadb`) and its persistent storage directory (`/var/lib/mysql`).
+    * Repaired the crash by utilizing `chown -R mysql:mysql` across the affected paths and successfully brought the database state back to `active (running)`.
